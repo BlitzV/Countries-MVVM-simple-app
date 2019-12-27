@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Countries</string>
+    <string name="error_loading_data">An error occurred while loading the data</string>
+    <string name="country">Default country name</string>
+    <string name="country_capital">Default capital</string>
+    <string name="image">Image</string>
+</resources>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/standard_margin_list"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="@dimen/standard_margin_list"
+        app:cardElevation="@dimen/cardview_standard_elevation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/card_design_gradient"
+            android:layout_height="match_parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_margin="@dimen/spacing_start_texts"
+                android:id="@+id/image_country"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/ic_launcher_background"
+                android:layout_gravity="center"
+                app:civ_border_color="@color/colorAccent"
+                app:civ_border_width="0.4dp"
+                android:contentDescription="@string/image" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txt_name_country"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_start_texts"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/spacing_start_texts"
+                    style="@style/title"
+                    android:text="@string/country"
+                    android:layout_marginLeft="@dimen/spacing_start_texts" />
+
+                <TextView
+                    android:id="@+id/txt_capital_country"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/text"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/country_capital"
+                    android:layout_marginStart="@dimen/spacing_start_texts"
+                    android:layout_marginLeft="@dimen/spacing_start_texts" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

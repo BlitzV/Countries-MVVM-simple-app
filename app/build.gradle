@@ -1,0 +1,91 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.app.blitz.countriesapp"
+        minSdkVersion 15
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        debug {
+            debuggable true
+            minifyEnabled false
+            buildConfigField "String", "BASE_URL", '"https://raw.githubusercontent.com/"'
+        }
+        release {
+            debuggable false
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "BASE_URL", '"https://raw.githubusercontent.com/"'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+ext {
+    lifecycleExtensionVersion = '1.1.1'
+    butterknifeVersion = '10.1.0'
+    supportVersion = '29.0.0'
+    retrofitVersion = '2.3.0'
+    glideVersion = '4.9.0'
+    rxJavaVersion = '2.1.1'
+    circleImageVersion = '3.0.1'
+    daggerVersion = '2.25.2'
+    androidLegacySupportVersion = '1.0.0'
+    mockitoVersion = '2.11.0'
+    mockitoCoreVersion = '1.1.1'
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+    //DESIGN
+    implementation "com.android.support:design:$supportVersion"
+    implementation "de.hdodenhof:circleimageview:$circleImageVersion"
+
+    //ARCH LIFECYCLE
+    implementation "android.arch.lifecycle:extensions:$lifecycleExtensionVersion"
+
+    //BUTTERKNIFE
+    implementation "com.jakewharton:butterknife:$butterknifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butterknifeVersion"
+
+    //RETROFIT
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+
+    //RXJAVA
+    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxJavaVersion"
+
+    //GLIDE
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+
+    //DAGGER
+    implementation "com.google.dagger:dagger:$daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$daggerVersion"
+    implementation "androidx.legacy:legacy-support-v4:$androidLegacySupportVersion"
+    annotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$daggerVersion"
+
+    //MOCKITO
+    testImplementation "org.mockito:mockito-inline:$mockitoVersion"
+    testImplementation "android.arch.core:core-testing:$mockitoCoreVersion"
+
+    //UNIT TEST
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}

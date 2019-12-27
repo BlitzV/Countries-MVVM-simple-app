@@ -1,0 +1,21 @@
+*.iml
+.gradle
+/local.properties
+.idea
+gradle.properties
+gradlew
+gradlew.bat
+settings.gradle
+gradle
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+Sera borrado .gitignore
+Sera borrado build.gradle
+Sera borrado libs/
+Sera borrado proguard-rules.pro
+Sera borrado src
